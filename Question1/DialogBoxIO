@@ -1,0 +1,40 @@
+import javax.swing.JOptionPane;
+
+public class DialogBoxIO {
+    public static void main(String[] args) {
+
+        String food = JOptionPane.showInputDialog(
+                null, "Enter your favorite food:",
+                "Favorite Food", JOptionPane.QUESTION_MESSAGE);
+
+        String color = JOptionPane.showInputDialog(
+                null, "Enter your favorite color:",
+                "Favorite Color", JOptionPane.QUESTION_MESSAGE);
+
+        // Handle cancel
+        if (food == null || color == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Input cancelled. Program will exit.",
+                    "Cancelled", JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
+
+        // Handle empty input
+        if (food.trim().isEmpty() || color.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,
+                    "Please enter valid (non-empty) values.",
+                    "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
+
+        String message = "Your favorite food is " + food
+                + " and favorite color is " + color;
+
+        JOptionPane.showMessageDialog(null, message,
+                "Your Favorites", JOptionPane.INFORMATION_MESSAGE);
+
+        System.out.println("[Dialog box shows: " + message + "]");
+
+        System.exit(0);
+    }
+}
