@@ -4,10 +4,7 @@ public class GradeCalculator {
     public static void main(String[] args) {
         // Create Scanner for reading user input
         Scanner scanner = new Scanner(System.in);
-
-        // Display section header
-        System.out.println("=== GRADE CALCULATOR ===");
-
+        
         // Accept the student's marks
         System.out.print("Enter student's marks: ");
         int marks = scanner.nextInt();
